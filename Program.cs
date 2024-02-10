@@ -140,7 +140,7 @@ namespace УСЛОВНЫЕ_ОПЕРАТОРЫ_Комиссарова
                         return "Воскресенье";
                     default:
                         return null;
-///Задача 5
+///Задача 6
             Console.WriteLine("Введите коэффициенты квадратного уравнения ax ^ 2 + bx + c = 0:");
             Console.Write(" a = ");
             double a = Convert.ToDouble(Console.ReadLine());
@@ -152,11 +152,63 @@ namespace УСЛОВНЫЕ_ОПЕРАТОРЫ_Комиссарова
             double c = Convert.ToDouble(Console.ReadLine());
 
             double discriminant = b * b - 4 * a * c;
-            if (discriminant > 0)
-            {
-                double x1 = (-b + Math.Sqrt(discriminant)) / (2 * a);
-                double x2 = (-b + Math.Sqrt(discriminant)) / (2 * a);
+           if (discriminant < 0)
+        {
+            Console.WriteLine("Уравнение не имеет действительных корней.");
+        }
+        else if (discriminant == 0)
+        {
+            double x = -b / (2 * a);
+            Console.WriteLine($"Уравнение имеет один корень: x = {x}");
+        }
+        else
+        {
+            double x1 = (-b + Math.Sqrt(discriminant)) / (2 * a);
+            double x2 = (-b - Math.Sqrt(discriminant)) / (2 * a);
+            Console.WriteLine($"Уравнение имеет два корня: x1 = {x1}, x2 = {x2}");
+        }
+                 Console.ReadKey();
                 }
+
+
+                
+                \\\9
+                    Console.Write("Введите год: ");
+            int Y = Convert.ToInt32(Console.ReadLine());
+
+        if ((Y % 4 == 0 && Y % 100 != 0) || Y % 400 == 0)
+            {
+                Console.WriteLine("Год " + Y + " является високосным");
+                Console.ReadKey();
+            }
+            else
+            {
+                Console.WriteLine("Год " + Y + " не является високосным");
+                Console.ReadKey();
+            }
+
+
+                \\\10
+                    Console.Write("На лугу пасется: ");
+            Console.Write("Введите число (не больше 100): ");
+            int n = int.Parse(Console.ReadLine());
+
+            if (n % 10 == 1 && (n / 10) % 10 == 0)
+            {
+                Console.WriteLine($"{n} корова");
+                Console.ReadKey();
+            }
+            else if ((n % 10) == 0 || n % 10 > 5 || n % 10 > 0 && (n / 10) % 10 == 1)
+            {
+                Console.WriteLine($"{n} коров");
+                Console.ReadKey();
+            }
+            else if (n % 10 > 1 && n % 10 < 5)
+            {
+                Console.WriteLine($"{n} коровы");
+                Console.ReadKey();
+            }
+                        
         }
     }
 }
