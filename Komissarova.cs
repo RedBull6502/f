@@ -10,7 +10,7 @@ namespace Komissarova_Task1
     {
         static void Main(string[] args)
         {
-            ///1
+            ///1 УСЛОВНЫЕ ОПЕРАТОРЫ
             int a = 2, b = 3, x = 2;
             double z = (a + 4 * b) * (a - 3 * b) + Math.Pow(a, x);
             Console.WriteLine("Ответ:" + z);
@@ -190,8 +190,8 @@ int a = 0, b = 2, c = 5;
             int целаяЧасть = a / b; // целая часть от деления
             int остаток = a % b; // остаток от деления
 
-            Console.WriteLine("Целая часть от деления: " + целаяЧасть);
-            Console.WriteLine("Остаток от деления: " + остаток);
+            Console.WriteLine("Целая часть: " + целаяЧасть);
+            Console.WriteLine("Остаток: " + остаток);
             Console.ReadKey();
 
         }
