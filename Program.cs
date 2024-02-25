@@ -4,211 +4,90 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace УСЛОВНЫЕ_ОПЕРАТОРЫ_Комиссарова
+namespace МАССИВЫ
 {
     class Program
     {
         static void Main(string[] args)
         {
-            //Задача 1
-            Console.WriteLine("Введите два числа:");
-            int a = Convert.ToInt32(Console.ReadLine());
-            int b = Convert.ToInt32(Console.ReadLine());
-
-            if (a > b)
-            {
-                Console.WriteLine("Большее число: " + a);
-                Console.ReadKey();
-            }
-            else if (b > a)
-            {
-                Console.WriteLine("Большее число: " + b);
-                Console.ReadKey();
-            }
-            else
-            {
-                Console.WriteLine("Числа равны");
-                Console.ReadKey();
-            }
-
-
-            
-            //Задача 2
-            Console.WriteLine("Введите три числа:");
-            int a1 = Convert.ToInt32(Console.ReadLine());
-            int b1 = Convert.ToInt32(Console.ReadLine());
-            int c1 = Convert.ToInt32(Console.ReadLine());
-
-            if (a1 > b && a1 > c1)
-            {
-                Console.WriteLine("Большее число: " + a);
-                Console.ReadKey();
-            }
-            else if (b1 > a1 && b1 > c1)
-            {
-                Console.WriteLine("Большее число: " + b);
-                Console.ReadKey();
-            }
-            else if (c1 > a && c1 > b1)
-            {
-                Console.WriteLine("Большее число: " + c1);
-                Console.ReadKey();
-            }
-            else
-            {
-                Console.WriteLine("Есть равные числа");
-                Console.ReadKey();
-            }
-
-            
-             ///Задача 3
-            Console.WriteLine("Введите три числа:");
-            int a = Convert.ToInt32(Console.ReadLine());
-            int b = Convert.ToInt32(Console.ReadLine());
-            int c = Convert.ToInt32(Console.ReadLine());
-
-           double sum1 = a + b;
-            double sum2 = b + c;
-            double sum3 = c + a;
-
-            double max_sum = Math.Max(sum1, Math.Max(sum2, sum3));
-           
-
-            if (max_sum == sum1)
-            {
-                Console.WriteLine($"Наибольшая сумма : {a}+{b}={sum1}");
-            }
-            else if (max_sum == sum1)
-            {
-                Console.WriteLine($"Наибольшая сумма : {a}+{c}={sum2}");
-            }
-            if (max_sum == sum2)
-            {
-                Console.WriteLine($"Наибольшая сумма : {b}+{c}={sum2}");
-            }
-             else if (max_sum == sum2)
-            {
-                Console.WriteLine($"Наибольшая сумма : {a}+{c}={sum3}");
-            }
-
-            
-            ///задача 4
-              Console.WriteLine("Введите высоту кирпича:");
-            double height = Convert.ToDouble(Console.ReadLine());
-            Console.WriteLine("Введите ширину кирпича:");
-            double width = Convert.ToDouble(Console.ReadLine());
-            
-            if ((height <= 50 && width <=
-                120)|| (height<= 120 && width <= 50))
-            {
-                Console.WriteLine("Кирпич поместится");
-            }
-            else
-            {
-                Console.WriteLine("Кирпич не поместится");
-            }
-
-             ///задача 5
-            Console.WriteLine("Введите номер дня недели(1-Понедельник, 2-Вторник и т.д.):");
-            int number = Convert.ToInt32(Console.ReadLine());
-            string name =GetName(number);
-            if (name != null)
-            {
-                Console.WriteLine($"День недели под номером {number} - это {name}");
-            }
-            else
-                {
-                    Console.WriteLine("Некорректный номер дня недели");
-                }
-            static string GetName (int number)
-            {
-                switch (number)
-                {
-                    case 1:
-                        return "Понедельник";
-                    case 2:
-                        return "Вторник";
-                    case 3:
-                        return "Среда";
-                    case 4:
-                        return "Четверг";
-                    case 5:
-                        return "Пятница";
-                    case 6:
-                        return "Суббота";
-                    case 7:
-                        return "Воскресенье";
-                    default:
-                        return null;
-///Задача 6
-            Console.WriteLine("Введите коэффициенты квадратного уравнения ax ^ 2 + bx + c = 0:");
-            Console.Write(" a = ");
-            double a = Convert.ToDouble(Console.ReadLine());
-
-            Console.Write(" b = ");
-            double b = Convert.ToDouble(Console.ReadLine());
-
-            Console.Write(" c = ");
-            double c = Convert.ToDouble(Console.ReadLine());
-
-            double discriminant = b * b - 4 * a * c;
-           if (discriminant < 0)
-        {
-            Console.WriteLine("Уравнение не имеет действительных корней.");
-        }
-        else if (discriminant == 0)
-        {
-            double x = -b / (2 * a);
-            Console.WriteLine($"Уравнение имеет один корень: x = {x}");
-        }
-        else
-        {
-            double x1 = (-b + Math.Sqrt(discriminant)) / (2 * a);
-            double x2 = (-b - Math.Sqrt(discriminant)) / (2 * a);
-            Console.WriteLine($"Уравнение имеет два корня: x1 = {x1}, x2 = {x2}");
-        }
-                 Console.ReadKey();
-                }
-
-
-                
-                \\\9
-                    Console.Write("Введите год: ");
-            int Y = Convert.ToInt32(Console.ReadLine());
-
-        if ((Y % 4 == 0 && Y % 100 != 0) || Y % 400 == 0)
-            {
-                Console.WriteLine("Год " + Y + " является високосным");
-                Console.ReadKey();
-            }
-            else
-            {
-                Console.WriteLine("Год " + Y + " не является високосным");
-                Console.ReadKey();
-            }
-
-
-                \\\10
-                    Console.Write("На лугу пасется: ");
-            Console.Write("Введите число (не больше 100): ");
+            //1
+            Console.Write("Длина массива n: ");
             int n = int.Parse(Console.ReadLine());
 
-            if (n % 10 == 1 && (n / 10) % 10 == 0)
+            Console.Write("Введите число p: ");
+            int p = int.Parse(Console.ReadLine()); //преобразование числа в строку
+
+            Random rand = new Random();//генерация случайных чисел
+            int[] array = new int[n]; //массив целых чисел array длиной n
+
+            for (int i = 0; i < n; i++)
             {
-                Console.WriteLine($"{n} корова");
-                Console.ReadKey();
+                array[i] = rand.Next(0, p + 1); // В цикле от 0 до n-1 каждый элемент массива заполняется случайным числом от 0 до p.
             }
-            else if ((n % 10) == 0 || n % 10 > 5 || n % 10 > 0 && (n / 10) % 10 == 1)
+
+            Console.WriteLine("Сгенерированный массив:");
+            foreach (var num in array) //последовательного перебора элементов массива без возможности их изменения
             {
-                Console.WriteLine($"{n} коров");
-                Console.ReadKey();
+                Console.Write(num + " ");
             }
-            else if (n % 10 > 1 && n % 10 < 5)
+            //2
+            Console.Write("Введите длину массива: ");
+            int n1 = int.Parse(Console.ReadLine()); //переменная длины массива
+            int[] array1 = new int[n1]; //создание массива array1 с длиной n1
+
+            for (int i = 0; i < n1; i++) //цикл который перебирает каждый элемент масс
             {
-                Console.WriteLine($"{n} коровы");
-                Console.ReadKey();
+                if (i == 0 || i == n1 - 1) 
+                {
+                    array1[i] = 1; //если индекс равен 0 или равен n - 1, то присваиваем элементу массива значение 1
+                }
+                else
+                {
+                    array1[i] = 0; // в другом случае присваеваем 0
+                }
             }
-                        
+
+            Console.WriteLine("Array:");
+            foreach (int num1 in array1) //перебираем все эл и выводим их с пробелами
+            {
+                Console.Write(num1 + " ");
+            }
+            //3
+            Console.Write("Введите длину массива: ");
+            int n2 = int.Parse(Console.ReadLine()); // возвращает преобразованное число
+
+            int[] array2 = new int[n2]; // Создаем массив заданной длины
+
+            for (int i2 = 0; i2 < n2; i2++)
+            {
+                array2[i2] = i2 % 2; // Заполняем массив нулями и единицами чередующимися
+            }
+
+            Console.WriteLine("Массив:");
+            foreach (int val2 in array2)
+            {
+                Console.Write(val2 + " "); 
+            }
+            //4
+            Console.Write("Введите длину массива: ");
+            int n3 = int.Parse(Console.ReadLine()); // Запрашиваем у пользователя длину массива
+
+            int[] array3 = new int[n3]; // Создаем массив заданной длины
+
+            int num3 = 1;
+            for (int i3 = 0; i3 < n3; i3++)
+            {
+                array3[i3] = num3;
+                num3 += 2; // Увеличиваем num на 2 для получения следующего нечетного числа
+            }
+
+            Console.WriteLine("Массив:");
+            foreach (int val3 in array)
+            {
+                Console.Write(val3 + " "); // Выводим массив на экран
+            }
         }
     }
 }
+
+
