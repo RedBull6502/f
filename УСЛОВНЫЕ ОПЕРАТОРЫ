@@ -1,0 +1,269 @@
+УСЛОВНЫЕ ОПЕРАТОРЫ
+1 задача
+ Console.WriteLine("Введите первое число");
+            int a = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Введите второе число");
+            int b = Convert.ToInt32(Console.ReadLine());
+
+            if (a > b) 
+            {
+                Console.WriteLine("Число {0} больше числа {1}", a, b);
+            }
+            else
+            {
+                Console.WriteLine("Число {0} больше числа {1}", b, a);
+            }
+
+            Console.ReadKey();
+        }
+2 задача
+   Console.WriteLine("Введите первое число");
+            int a = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Введите второе число");
+            int b = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Введите третье число");
+            int c = Convert.ToInt32(Console.ReadLine());
+            if (a > b)
+            {
+                if (a > c)
+                {
+                    Console.WriteLine("Число {0} больше чисел {1}, {2}", a, b, c);
+                }
+                else
+                {
+                    Console.WriteLine("Число {0} больше числа {1}, {2}", c, a, b);
+                }
+            }
+            else
+            {
+                if (b > c)
+                {
+                    Console.WriteLine("Число {0} больше числа {1}, {2}", b, a, c);
+                }
+                else
+                {
+                    Console.WriteLine("Число {0} больше числа {1}, {2}", c, a, b);
+                }
+            }
+            Console.ReadKey();
+        }
+3 задача
+
+            Console.WriteLine("Введите первое число");
+            int a = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Введите второе число");
+            int b = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Введите третье число");
+            int c = Convert.ToInt32(Console.ReadLine());
+            int sumAB = a + b;
+            int sumBC = b + c;
+            int sumAC = a + c;
+
+            if (sumAB > sumBC)
+            {
+                if (sumAB > sumAC)
+                {
+                    Console.WriteLine("Сумма 1 и 2 чисел - {0} больше, чем сумма 2 и 3 чисел - {1} и больше, чем сумма 1 и 3 чисел {2}", sumAB, sumBC, sumAC);
+                }
+                else
+                {
+                    Console.WriteLine("Сумма 1 и 3 чисел - {0} больше, чем сумма 1 и 2 чисел - {1} и больше, чем сумма 2 и 3 чисел {2}", sumAC, sumAB, sumBC);
+                }
+            }
+            else
+            {
+                if (sumBC > sumAC)
+                {
+                    Console.WriteLine("Сумма 2 и 3 чисел - {0} больше, чем сумма 1 и 2 чисел - {1} и больше, чем сумма 1 и 3 чисел {2}", sumBC, sumAB, sumAC);
+                }
+                else
+                {
+                    Console.WriteLine("Сумма 1 и 3 чисел {0} больше, чем сумма 1 и 2 чисел - {1} и больше, чем сумма 2 и 3 чисел {2}", sumAC, sumAB, sumBC);
+                }
+            }
+
+
+            Console.ReadKey();
+        }
+4 задача
+Console.WriteLine("Введите высоту кирпича:");
+            int Height = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("Введите ширину кирпича:");
+            int Width = Convert.ToInt32(Console.ReadLine());
+
+            if (Height <= 50 && Width <= 120)
+            {
+                Console.WriteLine("Кирпич пролезет в отверстие.");
+            }
+            else
+            {
+                Console.WriteLine("Кирпич не пролезет в отверстие.");
+            }
+
+            Console.ReadKey();
+        }
+
+6 задача
+Console.WriteLine("Введите a");
+            int a = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Введите b");
+            int b = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Введите c");
+            int c = Convert.ToInt32(Console.ReadLine());
+
+            double discriminant = Math.Pow(b,2) - 4 * a * c;
+
+            if (discriminant > 0)
+            {
+                double root1 = (-b + Math.Sqrt(discriminant)) / (2 * a);
+                double root2 = (-b - Math.Sqrt(discriminant)) / (2 * a);
+                Console.WriteLine("У уравнения два различных корня: {0} и {1}", root1, root2);
+            }
+            else if (discriminant == 0)
+            {
+                double root = -b / (2 * a);
+                Console.WriteLine("У уравнения один корень: {0}", root);
+            }
+            else
+            {
+                Console.WriteLine("У уравнения нет действительных корней");
+            }
+
+
+            Console.ReadKey();
+        }
+5 задача
+ Console.WriteLine("Введите номер дня недели: ");
+            int dayNumber = Convert.ToInt32(Console.ReadLine());
+
+            switch (dayNumber)
+            {
+                case 1:
+                    Console.WriteLine("Понедельник");
+                    break;
+                case 2:
+                    Console.WriteLine("Вторник");
+                    break;
+                case 3:
+                    Console.WriteLine("Среда");
+                    break;
+                case 4:
+                    Console.WriteLine("Четверг");
+                    break;
+                case 5:
+                    Console.WriteLine("Пятница");
+                    break;
+                case 6:
+                    Console.WriteLine("Суббота");
+                    break;
+                case 7:
+                    Console.WriteLine("Воскресенье");
+                    break;
+                default:
+                    Console.WriteLine("Неверный номер дня недели");
+                    break;
+            }
+
+            Console.ReadKey();
+            }
+
+
+7 задание
+ 
+            Console.WriteLine("Введите день");
+            int day = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Введите месяц");
+            int month = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Введите год");
+            int year = Convert.ToInt32(Console.ReadLine());
+
+            if ((year >= 1) && (month >= 1) && (month <= 12) && (day >= 1) && (day <= 31))
+            {
+                if ((month == 2) && (day > 28))
+                {
+                    Console.WriteLine("{0} {1} {2} - no", day, month, year);
+                }
+                else if ((month == 4) && (month == 6) && (month == 9) && (month == 11) && (day > 30))
+                {
+                    Console.WriteLine("{0} {1} {2} - no", day, month, year);
+                }
+                else
+                {
+                    Console.WriteLine("{0} {1} {2} - yes", day, month, year);
+                }
+            }
+            else
+            {
+                Console.WriteLine("{0} {1} {2} - no", day, month, year);
+            }
+                Console.ReadKey();
+        }
+
+8 задание
+          Console.WriteLine("Введите первую дату (день месяц год через пробел):");
+            DateTime date1 = ReadDateFromInput();
+
+            Console.WriteLine("Введите вторую дату (день месяц год через пробел):");
+            DateTime date2 = ReadDateFromInput();
+
+            if (date1 < date2)
+            {
+                Console.WriteLine("yes");
+            }
+            else
+            {
+                Console.WriteLine("no");
+            }
+
+            Console.ReadKey();
+        }
+        static DateTime ReadDateFromInput()
+        {
+            string[] input = Console.ReadLine().Split(' ');
+            int day = int.Parse(input[0]);
+            int month = int.Parse(input[1]);
+            int year = int.Parse(input[2]);
+            return new DateTime(year, month, day);
+        }
+
+9 задание
+ Console.WriteLine("Введите год:");
+            int year = Convert.ToInt32(Console.ReadLine());
+
+            if ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0)
+            {
+                Console.WriteLine($"{year} - високосный год");
+            }
+            else
+            {
+                Console.WriteLine($"{year} - не високосный год");
+            }
+
+            Console.ReadKey();
+        }
+
+10 задание
+ Console.WriteLine("Введите число n (не больше 100):");
+            int n = Convert.ToInt32(Console.ReadLine());
+            string cows = "коров";
+
+            if (n < 0 || n > 100)
+            {
+                Console.WriteLine("Число должно быть от 0 до 100.");
+                return;
+            }
+
+            if (n % 10 == 1 && n % 100 != 11)
+            {
+                cows = "корова";
+            }
+            else if (n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 10 || n % 100 >= 20))
+            {
+                cows = "коровы";
+            }
+
+            Console.WriteLine($"На лугу пасется {n} {cows}");
+
+
+            Console.ReadKey();
