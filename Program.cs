@@ -12,10 +12,10 @@ namespace МАССИВЫ
         {
             //1
             Console.Write("Длина массива n: ");
-            int n = int.Parse(Console.ReadLine());
+            int n = Convert.ToInt32(Console.ReadLine());
 
-            Console.Write("Введите число p: ");
-            int p = int.Parse(Console.ReadLine()); //преобразование числа в строку
+            Console.Write("число p: ");
+            int p = Convert.ToInt32(Console.ReadLine()); //преобразование числа в строку
 
             Random rand = new Random();//генерация случайных чисел
             int[] array = new int[n]; //массив целых чисел array длиной n
@@ -25,7 +25,7 @@ namespace МАССИВЫ
                 array[i] = rand.Next(0, p + 1); // В цикле от 0 до n-1 каждый элемент массива заполняется случайным числом от 0 до p.
             }
 
-            Console.WriteLine("Сгенерированный массив:");
+            Console.WriteLine("массив:");
             foreach (var num in array) //последовательного перебора элементов массива без возможности их изменения
             {
                 Console.Write(num + " ");
@@ -36,7 +36,7 @@ namespace МАССИВЫ
             
             //2
             Console.Write("Введите длину массива: ");
-            int n1 = int.Parse(Console.ReadLine()); //переменная длины массива
+            int n1 = Convert.ToInt32(Console.ReadLine()); //переменная длины массива
             int[] array1 = new int[n1]; //создание массива array1 с длиной n1
 
             for (int i = 0; i < n1; i++) //цикл который перебирает каждый элемент масс
@@ -51,7 +51,7 @@ namespace МАССИВЫ
                 }
             }
 
-            Console.WriteLine("Array:");
+            Console.WriteLine("Массив:");
             foreach (int num1 in array1) //перебираем все эл и выводим их с пробелами
             {
                 Console.Write(num1 + " ");
@@ -61,7 +61,7 @@ namespace МАССИВЫ
             
             //3
             Console.Write("Введите длину массива: ");
-            int n2 = int.Parse(Console.ReadLine()); // возвращает преобразованное число
+            int n2 = Convert.ToInt32(Console.ReadLine()); // возвращает преобразованное число
 
             int[] array2 = new int[n2]; // Создаем массив заданной длины
 
@@ -80,7 +80,7 @@ namespace МАССИВЫ
             
             //4
             Console.Write("Введите длину массива: ");
-            int n3 = int.Parse(Console.ReadLine()); // Запрашиваем у пользователя длину массива
+            int n3 = Convert.ToInt32(Console.ReadLine()); // Запрашиваем у пользователя длину массива
 
             int[] array3 = new int[n3]; // Создаем массив заданной длины
 
@@ -101,7 +101,7 @@ namespace МАССИВЫ
             
             //5
              Console.WriteLine("Введите длину массива:");
-int n = int.Parse(Console.ReadLine());
+int n = Convert.ToInt32(Console.ReadLine());
  int[] array = new int[n];
 
         for (int i = 0; i < array.Length; i++) //позволяет получить длину массива
@@ -118,7 +118,7 @@ int n = int.Parse(Console.ReadLine());
 
 6//
      Console.WriteLine("Введите длину массива:");
-            int n = int.Parse(Console.ReadLine());
+            int n = Convert.ToInt32(Console.ReadLine());
 
             int[] array = new int[n];
 
@@ -144,7 +144,7 @@ int n = int.Parse(Console.ReadLine());
 
 
             7//
-                 Console.WriteLine("Введите длину массива n:");
+                Console.WriteLine("Введите длину массива n:");
             int n = Convert.ToInt32(Console.ReadLine());
 
             Console.WriteLine("Введите число p:");
@@ -158,44 +158,39 @@ int n = int.Parse(Console.ReadLine());
             {
                 array[i] = random.Next(0, p + 1); //Возвращает случайное целое число
             }
-
-            Console.Write("Сгенерированный массив: ");
-            foreach (var num in array)
-            {
-                Console.Write(num + " ");
-            }
-
             int First = 0;
             int Last = 0;
 
-            // Подсчет чисел, делящихся без остатка на первый и последний элементы массива
-            for (int i = 0; i < array.Length; i++)
+           
+            foreach (int num in array)
             {
-                if (array[i] % array[0] == 0)
+                if (num % array[0] == 0)
                 {
                     First++;
                 }
-                if (array[i] % array[array.Length - 1] == 0)
+                if (num % array[n- 1] == 0)
                 {
                     Last++;
                 }
+                Console.Write(num + " ");
             }
-
-            Console.WriteLine("Чисел, делящихся без остатка на первый элемент массива: " + countFirst);
-            Console.WriteLine("Чисел, делящихся без остатка на последний элемент массива: " + countLast);
+            Console.WriteLine("Чисел, делящихся без остатка на первый элемент массива: " + First);
+            Console.WriteLine("Чисел, делящихся без остатка на последний элемент массива: " + Last);
 
             if (First > Last)
             {
-                Console.WriteLine("Чисел, делящихся на первый элемент, больше в массиве.");
+                Console.WriteLine("Чисел, делящихся на первый элемент, больше.");
             }
             else if (Last > First)
             {
-                Console.WriteLine("Чисел, делящихся на последний элемент, больше в массиве.");
+                Console.WriteLine("Чисел, делящихся на последний элемент, больше.");
             }
             else
             {
                 Console.WriteLine("Одинаковое количество чисел, делящихся на первый и последний элементы массива.");
             }
+            Console.ReadKey();
+        }
 
 
 
@@ -264,9 +259,9 @@ int n = int.Parse(Console.ReadLine());
             }
         }
         
-        int temp = array[minIndex];
+        int zam = array[minIndex];
         array[minIndex] = array[maxIndex];
-        array[maxIndex] = temp;
+        array[maxIndex] = zam;
         
         Console.WriteLine("Массив после замены:");
         PrintArray(array);
@@ -363,7 +358,7 @@ int n = Convert.ToInt32(Console.ReadLine());
         }
         Console.WriteLine();
 
-        Console.WriteLine("Количество отрицательных чисел в массиве: " + negative);
+        Console.WriteLine("Количество отрицательных чисел: " + negative);
         }
     }
 }
