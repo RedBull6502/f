@@ -1,0 +1,258 @@
+Задача 1
+Выведите на экран 10 раз фразу "Майнкрафт – это моя жизнь!"
+//while
+ int a = 0;//Создается переменная a и присваивается значение 0. Она будет использоваться для подсчета количества повторений
+            while (a < 10) //Запускается цикл while, который будет выполняться до тех пор, пока значение переменной count меньше 10
+            {
+                Console.WriteLine("Майнкрафт – это моя жизнь!");
+                a++; //Увеличивается значение переменной count на 1
+            }
+Console.ReadKey();
+
+//for
+for (int i = 0; i < 10; i++)
+            {
+                Console.WriteLine("Майнкрафт – это моя жизнь!");
+            }
+            Console.ReadKey();
+
+
+Задача 2
+Выведите на экран n раз фразу "ОПК – сила, Гарвард – могила! ". Число n вводит пользователь.
+//while
+Console.WriteLine("Кол-во повторений n:");
+            int n = Convert.ToInt32(Console.ReadLine());
+
+            int i = 0; //счетчик
+            while (i < n) // пока i меньше n фраза будет повторяться
+            {
+                Console.WriteLine("ОПК – сила, Гарвард – могила!");
+                i++;
+            }
+            Console.ReadKey();
+
+//for
+ Console.WriteLine("Введите количество повторений:");
+            int n = Convert.ToInt32(Console.ReadLine());
+
+            for (int i = 0; i < n; i++)
+            {
+                Console.WriteLine("ОПК – сила, Гарвард – могила!");
+            }
+
+
+Задача 3
+Выведите на экран прямоугольник из нулей. Количество строк вводит пользователь, количество
+столбцов равно 5.
+//while
+ Console.WriteLine("Введите количество строк:");
+            int rows = Convert.ToInt32(Console.ReadLine());
+
+            int stolb = 5;
+            int i3 = 0;
+
+            while (i3 < rows)//выполняется до тех пор пока значение i меньше чем кол-во строк
+            {
+                for (int j = 0; j < stolb; j++)
+                {
+                    Console.Write("0");
+                }
+                Console.WriteLine();
+                i3++;
+            }
+
+//for
+ Console.WriteLine("Введите количество строк: ");
+            int stolb = Convert.ToInt32(Console.ReadLine());
+
+            for (int i = 0; i < stolb; i++)
+            {
+                for (int j = 0; j < 5; j++)
+                {
+                    Console.Write("0");
+                }
+                Console.WriteLine();
+            }
+
+Задача 4
+Выведите на экран числа 1, 2, 3, 4, ..., 20.
+ //while 4
+            int i4 = 1;
+            while (i4 <= 20)
+            {
+                Console.WriteLine(i4);
+                i4++;
+            }
+ //for 4
+            for (int i4 = 1; i4 <= 20; i4++)
+            {
+                Console.WriteLine(i4);
+            }
+
+Задача 5
+Вывести на экран ряд чисел 1001, 1004, 1007, ... 1025.
+//while 5
+            int i5 = 1001;
+            while (i5 <= 1025)
+            {
+                Console.WriteLine(i5);
+                i5 += 3;
+            }
+ //for 5
+            for (int i5 = 1001; i5 <= 1025; i5 += 3)
+            {
+                Console.WriteLine(i5);
+            }
+
+
+Задача 6
+Вывести на экран числа 100, 96, 92, ... до последнего положительного включительно.
+  //for 6
+            for (int i6 = 100; i6 >= 0; i6 -= 4) //уменьшается на 4 с помощью i -= 4
+            {
+                Console.WriteLine(i6);
+            }
+//while 6
+            int i6 = 100;
+            while (i6 >= 0)
+            {
+                Console.WriteLine(i6);
+                i6 -= 4;
+            }
+
+Задача 7
+Выведите на экран числа 1.2, 1.4, 1.6, ..., 2.8.
+ //while 7
+            double num = 1.2;
+            while (num <= 2.8)
+            {
+                Console.WriteLine(num);
+                num += 0.2;
+            }
+  //for 7
+            for (double num = 1.2; num <= 2.8; num += 0.2)
+            {
+                Console.WriteLine(num);
+            }
+
+
+Задача 8
+Выведите следующие строки. Первая: 25 25.5 24.8. Вторая: 26 26.5 25.8. И так далее. Последняя
+строка: 35 35.5 34.8.
+ //for 8
+            for (double num1 = 25, num2 = 25.5, num3 = 24.8; num1 <= 35 && num2 <= 35.5 && num3 <= 34.8; num1++, num2++, num3++)
+            {
+                Console.WriteLine($"{num1} {num2} {num3}");
+            }
+  //while 8
+            double num1 = 25;
+            double num2 = 25.5;
+            double num3 = 24.8;
+
+            while (num1 <= 35 && num2 <= 35.5 && num3 <= 34.8)
+            {
+                Console.WriteLine($"{num1} {num2} {num3}");
+                num1++;
+                num2++;
+                num3++;
+            }
+
+
+Задача 9
+Пользователь вводит курс доллара в рублях. Показать таблицу цен 1$, 2$, ..., 50$ в рублях, третьим
+столбцом добавить количество Дошираков, которые можно купить на данные суммы, если цена 1
+Доширака равна 40 руб. Пример: 1$ - 70 р – 1 Доширак (всего 50 строк).
+//for 9
+Console.WriteLine("курс доллара в рублях");
+            double kurs = Convert.ToDouble(Console.ReadLine());
+
+           
+    Console.WriteLine("Цена доширака 40 руб");
+
+            for (int i = 1; i <= 50; i++)
+            {
+                double d = i * kurs;
+                int doshik = (int)(d / 40);
+
+                Console.WriteLine($"{i}$ - {d} р - {doshik} Доширак");
+            }
+ Console.WriteLine("курс доллара в рублях:");
+            double kurs = Convert.ToDouble(Console.ReadLine());
+
+  //while 9          
+    Console.WriteLine("Цена доширака 40 руб");
+
+            int i9 = 1;
+            while (i9 <= 50)
+            {
+                double dol = i9 * kurs;
+                int doshik = (int)(dol / 40);
+
+                Console.WriteLine($"{i9}$ - {dol} р - {doshik} Доширак");
+
+                i9++;
+            }
+
+
+Задача 10
+Для данного n найти сумму 1+2+3+...+n. Например, для n=10 ответ равен 55
+//while 10
+            Console.WriteLine("Введите число n:");
+            int n1 = Convert.ToInt32(Console.ReadLine());
+
+           
+    int sum = 0;
+            int h = 1;
+
+            while (h <= n1)
+            {
+                sum += h;
+                h++;
+            }
+
+            Console.WriteLine($"Сумма чисел от 1 до {n1} равна {sum}");
+//for 10
+  Console.WriteLine("Введите число n:");
+int n1 = Convert.ToInt32(Console.ReadLine());
+
+       
+    int sum = 0;
+
+    for (int i = 1; i <= n1; i++)
+    {
+        sum += i;
+    }
+
+    Console.WriteLine($"Сумма чисел от 1 до {n1} равна {sum}");
+
+
+Задача 11
+Вычислите значения функции f(x)=x2−sinx на отрезке [a;b] с шагом h.
+ //while 11
+        Console.WriteLine("Введите начало интервала");
+double a11 = Convert.ToDouble(Console.ReadLine());
+        Console.WriteLine("Введите конец интервала");
+double b = Convert.ToDouble(Console.ReadLine());
+        Console.WriteLine("Введите число h");
+double c11 = Convert.ToDouble(Console.ReadLine());
+
+            double x = a11; // текущее значение x на отрезке [a;b]
+while (x <= b)
+{
+double fx = x * x - Math.Sin(x);
+        Console.WriteLine("f(" + x + ") = " + fx);
+x += c11;
+}
+//for 11
+            Console.WriteLine("начало интервала");
+            double a = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("конец интервала");
+            double b = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("число h");
+            double h = Convert.ToDouble(Console.ReadLine());
+
+            for (double x = a; x <= b; x += h)
+            {
+                double result = Math.Pow(x, 2) - Math.Sin(x);
+                Console.WriteLine("f({0}) = {1}", x, result);
+            }
