@@ -1,25 +1,317 @@
-﻿
-Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.33927.289
-MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "МАССИВЫ", "МАССИВЫ\МАССИВЫ.csproj", "{DE67525C-4026-4207-B769-93F82337E6B1}"
-EndProject
-Global
-	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|Any CPU = Debug|Any CPU
-		Release|Any CPU = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{DE67525C-4026-4207-B769-93F82337E6B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DE67525C-4026-4207-B769-93F82337E6B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DE67525C-4026-4207-B769-93F82337E6B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DE67525C-4026-4207-B769-93F82337E6B1}.Release|Any CPU.Build.0 = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {33DB486F-27CD-4BDC-9D96-CAC707C57E59}
-	EndGlobalSection
-EndGlobal
+  1// 
+Console.Write("Введите длину массива: ");
+            int n = Convert.ToInt32(Console.ReadLine());
+
+            Console.Write("Введите число p: ");
+            int p = Convert.ToInt32(Console.ReadLine());
+
+            Random rand = new Random();
+
+            int[] array = new int[n];
+            for (int i = 0; i < n; i++)
+            {
+                array[i] = rand.Next(0, p + 1);
+            }
+
+            Console.WriteLine("Сгенерированный массив:");
+            foreach (int num in array)
+            {
+                Console.Write(num + " ");
+            }
+
+2//
+  Console.Write("Введите длину массива: ");
+            int n = Convert.ToInt32(Console.ReadLine());
+
+            int[] array = new int[n];
+
+            for (int i = 1; i < n - 1; i++)
+            {
+                array[i] = 0;
+            }
+
+            array[0] = 1;
+            array[n - 1] = 1;
+
+            Console.WriteLine("Сгенерированный массив:");
+            foreach (int num in array)
+            {
+                Console.Write(num + " ");
+            }
+3//
+ Console.WriteLine("Введите длину массива:");
+            int n = Convert.ToInt32(Console.ReadLine());
+
+            int[] array = new int[n];
+
+            for (int i = 0; i < n; i++)
+            {
+                array[i] = i % 2;
+            }
+
+            Console.WriteLine("Полученный массив:");
+            foreach (int num in array)
+            {
+                Console.Write(num + " ");
+            }
+4//
+Console.Write("Введите длину массива ");
+            int n = Convert.ToInt32(Console.ReadLine());
+
+            int[] arr = new int[n];
+            int num = 1;
+
+            for (int i = 0; i < n; i++)
+            {
+                arr[i] = num;
+                num += 2;
+            }
+
+            Console.WriteLine("массив ");
+            foreach (int value in arr)
+            {
+                Console.Write(value + " ");
+            }
+5//
+ Console.Write("Введите длину массива ");
+            int n = Convert.ToInt32(Console.ReadLine());
+
+            int[] array = new int[n];
+
+            for (int i = 0; i < n; i++)
+            {
+                array[i] = i * i * i;
+            }
+
+            Console.WriteLine("Массив кубов индексов");
+            for (int i = 0; i < n; i++)
+            {
+                Console.WriteLine($"array[{i}] = {array[i]}");
+            }
+6//
+
+            Console.Write("Введите длину массива ");
+            int n = Convert.ToInt32(Console.ReadLine());
+
+            int[] array = new int[n];
+            for (int i = 0; i < n; i++)
+            {
+                if (i % 2 == 0)
+                {
+                    array[i] = 1;
+                }
+                else
+                {
+                    array[i] = i % 5;
+                }
+            }
+
+            Console.WriteLine("Полученный массив:");
+            foreach (int num in array)
+            {
+                Console.Write(num + " ");
+            }
+7//
+Console.WriteLine("Введите длину массива n ");
+            int n = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("Введите p ");
+            int p = Convert.ToInt32(Console.ReadLine());
+
+            Random rand = new Random();
+            int[] array = new int[n];
+
+            for (int i = 0; i < n; i++)
+            {
+                array[i] = rand.Next(1, p + 1);
+            }
+
+            int first = 0;
+            int last = 0;
+
+            foreach (int i in array)
+            {
+                if (i % array[0] == 0)
+                {
+                    first++;
+                }
+                if (i % array[n - 1] == 0)
+                {
+                    last++;
+                }
+            }
+
+            Console.WriteLine("Массив:");
+            foreach (int item in array)
+            {
+                Console.Write(item + " ");
+            }
+
+            if (first > last)
+            {
+                Console.WriteLine("Чисел которые делятся на первый элемент массива больше");
+            }
+            else if (first < last)
+            {
+                Console.WriteLine("Чисел которые делятся на последний элемент массива больше");
+            }
+            else
+            {
+                Console.WriteLine("Чисел которые делятся на первый и последний элементы массива, одинаковое количество");
+            }
+8//
+ Console.Write("Введите длину массива: ");
+            int n = Convert.ToInt32(Console.ReadLine());
+
+            Console.Write("Введите число p: ");
+            int p = Convert.ToInt32(Console.ReadLine());
+
+            Random random = new Random();
+            int[] array = new int[n];
+
+            for (int i = 0; i < n; i++)
+            {
+                array[i] = random.Next(0, p);
+            }
+
+            int sum = 0;
+            for (int i = 0; i < n; i++)
+            {
+                if (i % 2 == 0)
+                {
+                    sum += array[i];
+                }
+            }
+
+            Console.WriteLine("Полученный массив:");
+            foreach (int num in array)
+            {
+                Console.Write(num + " ");
+            }
+
+            Console.WriteLine("Сумма чисел которые стоят на четных местах = " + sum );
+9//
+  Console.WriteLine("Введите длину массива n ");
+            int n = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("Введите число p ");
+            int p = Convert.ToInt32(Console.ReadLine());
+
+            Random rand = new Random();
+            int[] array = new int[n];
+
+
+            for (int i = 0; i < n; i++)
+            {
+                array[i] = rand.Next(0, p);
+            }
+
+
+            Console.WriteLine("Массив:");
+            foreach (int item in array)
+            {
+                Console.Write(item + " ");
+            }
+
+
+            int maxIndex = 0;
+            int minIndex = 0;
+            for (int i = 1; i < n; i++)
+            {
+                if (array[i] > array[maxIndex])
+                {
+                    maxIndex = i;
+                }
+                if (array[i] < array[minIndex])
+                {
+                    minIndex = i;
+                }
+            }
+
+
+            int temp = array[maxIndex];
+            array[maxIndex] = array[minIndex];
+            array[minIndex] = a;
+
+
+            Console.WriteLine("Массив после замены наибольшего и наименьшего элементов:");
+            foreach (int item in array)
+            {
+                Console.Write(item + " ");
+            }
+10//
+Console.WriteLine("Введите длину массива");
+            int n = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("Введите число p");
+            int p = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("Введите число a");
+            int a = int.Parse(Console.ReadLine());
+
+            Random rand = new Random();
+
+            int[] array = new int[n];
+
+            for (int i = 0; i < n; i++)
+            {
+                array[i] = rand.Next(0, p+1);
+            }
+
+            Console.WriteLine("Исходный массив:");
+            foreach (int num in array)
+            {
+                Console.Write(num + " ");
+            }
+
+            int sum = 0;
+            foreach (int num in array)
+            {
+                sum += num;
+            }
+
+            int average = sum / n;
+
+            for (int i = 0; i < n; i++)
+            {
+                if (array[i] > a)
+                {
+                    array[i] = average;
+                }
+            }
+            
+            Console.WriteLine("Массив после замены:");
+            foreach (int num in array)
+            {
+                Console.Write(num + " ");
+            }
+//11
+ Console.WriteLine("Введите длину массива:");
+            int n = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("Введите число p");
+            int p = Convert.ToInt32(Console.ReadLine());
+
+            Random rand = new Random();
+
+            int[] array = new int[n];
+
+            int countNegative = 0;
+
+            for (int i = 0; i < n; i++)
+            {
+                array[i] = rand.Next(-10, p + 1);
+
+                if (array[i] < 0)
+                {
+                    countNegative++;
+                }
+            }
+
+            Console.WriteLine("Полученный массив");
+            foreach (int num in array)
+            {
+                Console.Write(num + " ");
+            }
+
+            Console.WriteLine("Количество отрицательных чисел в массиве: " + countNegative);
