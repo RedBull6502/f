@@ -11,7 +11,7 @@ namespace While
         /// <summary>
         /// Главная точка входа для приложения.
         /// </summary>
-        [STAThread]
+       
         static void Main()
         {
             //while 1
@@ -45,6 +45,8 @@ namespace While
 
             while (i3 < rows)//выполняется до тех пор пока значение i меньше чем кол-во строк
             {
+               
+                
                 for (int j = 0; j < stolb; j++)
                 {
                     Console.Write("0");
@@ -95,7 +97,7 @@ namespace While
                 num3++;
             }
             //while 9
-            Console.WriteLine("курс доллара в рублях:");
+            Console.WriteLine("курс доллара в рублях");
             double kurs = Convert.ToDouble(Console.ReadLine());
 
             
@@ -112,7 +114,7 @@ namespace While
                 i9++;
             }
             //while 10
-            Console.WriteLine("Введите число n:");
+            Console.WriteLine("Введите число n");
             int n1 = Convert.ToInt32(Console.ReadLine());
 
            
@@ -132,7 +134,7 @@ namespace While
 double a11 = Convert.ToDouble(Console.ReadLine());
         Console.WriteLine("Введите конец интервала");
 double b = Convert.ToDouble(Console.ReadLine());
-        Console.WriteLine("Введите число h");
+        Console.WriteLine("Введите число с");
 double c11 = Convert.ToDouble(Console.ReadLine());
 
             double x = a11; // текущее значение x на отрезке [a;b]
