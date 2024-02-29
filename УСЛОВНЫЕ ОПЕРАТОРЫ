@@ -94,11 +94,11 @@ Console.WriteLine("Введите высоту кирпича:");
 
             if (Height <= 50 && Width <= 120)
             {
-                Console.WriteLine("Кирпич пролезет в отверстие.");
+                Console.WriteLine("пролезет");
             }
             else
             {
-                Console.WriteLine("Кирпич не пролезет в отверстие.");
+                Console.WriteLine("не пролезет");
             }
 
             Console.ReadKey();
